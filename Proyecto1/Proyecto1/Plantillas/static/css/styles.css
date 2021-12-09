@@ -1,0 +1,64 @@
+/* Estilos generales para el menu de navegacion  */
+nav{
+    background-color: blueviolet;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0%;
+    margin: 0px 0 20px 0;
+    padding: 0px;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+nav li{
+    display: inline-block;
+    margin: 0 20px;
+}
+
+
+/* Estilos generales para el footer o pie de pagina  */
+footer{
+    width: 90%;
+    position: fixed;
+    bottom: 0px;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-transform: uppercase;
+    background-color: sandybrown;
+}
+
+footer div{
+    margin: 0px;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer p{
+    margin: 10px 20px 0px 0px;
+}
+
+footer li{
+    display: inline-block;
+    margin: 0 20px;
+}
+
+/* estilos a las secciones  */
+section{
+    width: 90%;
+    height: 100%;
+    margin: 5% 0 0 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+#box{
+	width: 60%;
+	float: center;
+	margin-top:40px;
+    font-size: 50px;
+}

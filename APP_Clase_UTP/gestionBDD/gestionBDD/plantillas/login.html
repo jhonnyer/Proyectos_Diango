@@ -1,0 +1,12 @@
+<style>
+    body{
+        background-color: aquamarine;
+    }
+</style>
+<form action="/login/" method="POST">
+    {% csrf_token %}
+    {{formulario.as_p}}
+
+    <input type="submit" value="Ingresar">
+    <input type="reset" value="Borrar">
+</form>

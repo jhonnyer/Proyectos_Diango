@@ -1,0 +1,85 @@
+<HTML>
+    <body>
+        <!-- incrusto plantilla del menu de navegacion  -->
+        {% include "nav/nav.html" %}
+
+        <!-- para caracteres especiales podemos utilizar: d&iacute;a para una tilde-->
+        <h1 style="color: red;">Fecha y hora actual {{fecha_actual}}
+        </h1>
+        <p>Día actual {{fecha_actual.day}}, hora actual: {{fecha_actual.hour}}</p>
+        <p>Fecha {{fecha_actual.day}}/{{fecha_actual.month}}/{{fecha_actual.year}}</p>
+        <p>El nombre del profesor es: {{nombsre}} {{apellido}}</p>
+        <p>Datos en mayuscula y minuscula; nombre del profesor es: {{nombre.upper}} y apellido en minuscula es: {{apellido.lower}}</p>
+        <br>
+        <p>Temas a ver en el curso {{temas}}</p>
+        <p>Primer tema a verificar: {{temas.0}}</p>
+        <p>Lenguaje: {{lenguaje.1}}</p>
+        <br>
+
+        <!-- Verificar nombre de usuario coon condicional if  -->
+        {# comentario de una sola linea un condicional#}
+        {% comment %} Comentario de 
+                varias lineas
+        {% endcomment %}
+
+        <h1>Verificacion nombre del profesor condicional if</h1>
+        {% if nombre == 'Juan' %}
+            <p>El curso lo imparte el profesor: {{nombre|upper}}</p>
+        {% else %}
+            <p>El curso no tiene profesor</p>
+        {% endif %}
+
+
+
+        <!-- Recorrer manualmente lista  -->
+        <h1>Lenguajes del curso</h1>
+        <ul>
+            <li>{{lenguaje.0}}</li>
+            <li>{{lenguaje.1}}</li>
+            <li>{{lenguaje.2}}</li>
+        </ul>
+
+        <!-- Recorrer lista con ciclo for  -->
+        <h1>Temas del curso recorrido en lista ul-li</h1>
+        <p>
+            <!-- temas es la lista que esta en el contexto en la clave  -->
+            <ul>
+                {% for t in temas %}
+                    <li>{{t}} - Letra inicial: {{t|first|lower}}</li>
+                {% endfor %}
+            </ul>
+        </p>
+
+        <h1>Recorrido de lista con p</h1>
+        <p>
+            <!-- temas es la lista que esta en el contexto en la clave  -->
+            {% for t in temas %}
+                <p>{{t}}</p>
+            {% endfor %}
+        </p>
+
+        <h1>Lista vacia sin condicional</h1>
+        <p>
+            <!-- temas es la lista que esta en el contexto en la clave  -->
+            <ul>
+                {% for lv in lista_vacia %}
+                    <li>{{lv}}</li>
+                {% endfor %}
+            </ul>
+        </p>
+        <h1>Lista vacia con condicional if si no hay elementos</h1>
+        <p>
+            <!-- temas es la lista que esta en el contexto en la clave  -->
+            <ul>
+                <!-- If evalua si existe informacion en la lista, muestra cambios  -->
+                {% if lista_vacia%}
+                    {% for lv in lista_vacia %}
+                        <li>{{lv}}</li>
+                    {% endfor %}
+                {% else %}
+                    <p>No hay elementos que mostrar</p>
+                {% endif %}
+            </ul>
+        </p>
+    </body>
+</HTML>

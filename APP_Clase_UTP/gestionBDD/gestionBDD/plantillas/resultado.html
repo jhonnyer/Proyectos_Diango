@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=}, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(158, 214, 158, 0.63);
+        }
+        div{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        table{
+            width: 40%;
+        }
+        td{
+            width: auto;
+        }
+        th{
+            width: auto;
+        }
+        tr{
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <caption>Resultado de la busqueda</caption>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Sección</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                {% if status %}
+                    {% for re in registro %}
+                        <tr>
+                            <td>{{re.nombre}}</td>
+                            <td>{{re.seccion}}</td>
+                            <td>{{re.precio}}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                        <tr>
+                            <td></td>
+                            <td><p>Sin resultados</p></td>
+                            <td></td>
+                        </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

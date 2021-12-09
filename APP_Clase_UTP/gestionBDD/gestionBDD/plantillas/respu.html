@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respuesta</title>
+</head>
+<body>
+    {% if genero == 'masculino' %}
+        <style>
+            span{
+                color: royalblue;
+            }
+        </style>
+        <h1>Hola <span>{{nombre}}</span> bienvenido</h1>
+    {% else %}
+        <style>
+            span{
+                color: salmon;
+            }
+        </style>
+        <h1>Hola <span>{{nombre}}</span> bienvenida</h1>
+    {% endif %}
+
+    <p>Usted tiene una edad de {{edad}} años y su genero es {{genero}}, por lo tanto le recomendamos el siguiente video</p>
+    {% if edad <= 8 %}
+        {% if genero == 'masculino' %}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ExaWNagWYBI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% else %}
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/Zu5ZVeHQNBg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% endif %}
+    {% endif %}
+
+    {% if edad > 8 and edad <= 20 %}
+        {% if genero == 'masculino' %}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/nmieHHmgBO4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% else %}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/pJif2DdowmI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% endif %}
+
+    {% endif %}
+
+    {% if edad > 20 %}
+        {% if genero == 'masculino' %}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-9f3OMX7A0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% else %}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/TSvE3ALvunE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% endif %}
+    {% endif %}
+
+
+</body>
+</html>

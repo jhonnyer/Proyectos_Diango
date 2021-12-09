@@ -1,0 +1,37 @@
+<body>
+    <style>
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        form *{
+            max-width: 20%;
+            margin: 5px;
+        }
+    </style>
+
+    <form action="/resultado/" method="GET">
+        <label for="producto">Introduzca el producto que desea buscar:</label>
+        <input type="text" name="producto" size="40">
+
+        {% if error %}
+            <p style="background-color: red;">El nombre buscado debe tener al menos 20 letras</p>
+        {% endif %}
+
+        <label for="seccion">Indique la sección que desea buscar:</label>
+        <select name="seccion" id="">
+            <option value="todos">Todos</option>
+            
+            {% for sec in articulos %}
+                <option value="{{sec}}">{{sec|upper}}</option>
+            {% endfor %}
+        </select>
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+    </form>
+</body>
+

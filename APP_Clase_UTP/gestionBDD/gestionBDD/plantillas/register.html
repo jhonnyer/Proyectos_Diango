@@ -1,0 +1,36 @@
+<body>
+    <style>
+        body{
+             background-color: aquamarine;
+        }
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        form *{
+            max-width: 100%;
+            margin: 5px;
+        }
+    </style>
+    <form action="/register/" method="POST">
+        <!-- Verifica si hay mensajes  -->
+        {% if messages %}
+            {% for msj in messages %}
+                <p>{{msj}}</p>
+            {% endfor %}
+        {% endif %}
+
+
+        {% csrf_token %}
+
+        <!-- Metodo as_p se encarga de crear el formulario, en este caso de registro  -->
+        {{formulario.as_p}}
+        <div>
+            <input type="submit" value="Registrar">
+            <input type="reset" value="Borrar">
+        </div>
+    </form>
+</body>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Resultado de la busqueda realizada</h1>
+    <p>Estás buscando: <strong>{{query}}</strong></p>
+    {% if articulos %} 
+        <!-- Muestro la cantidad de articulos encontrados, dato numerico por eso el length  -->
+        <p>Articulos encontrados: {{articulos|length}} articulos</p>
+        <ul>
+            <!-- Recorro la lista de articulos con un for  -->
+            {% for articulo in articulos %}
+            <!-- &nbsp; crea un espacio en blanco  -->
+            <li>{{articulo.nombre}} &nbsp; {{articulo.seccion}} &nbsp; {{articulo.precio}}</li>
+            
+            {% endfor %}
+        </ul> 
+    {% else %}
+        <p>No se encontro ningún articulo</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!-- <form action="/validacion/" method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value="Enviar">
+</form> -->
+
+ <!-- cada formulario hay que añadirle el token  -->
+<form action="/validar/" method="POST">{% csrf_token %} 
+    <table>
+        <!-- vamos a crear una tabla del formulario  -->
+        {{form.as_table}}
+    </table>
+    <input type="submit" value="Enviar">
+</form>

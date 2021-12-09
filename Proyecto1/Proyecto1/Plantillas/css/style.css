@@ -1,0 +1,16 @@
+#barra{
+    /* para separacion con el elemento de la izquierda y entre ellos */
+    margin: 0; 
+    /* para separacion entre el contenido y el contenedor */
+    padding: 0;
+    /* para quitar el punto a la lista */
+    list-style: none;
+    /* para colocar en mayuscula */
+    text-transform: uppercase;
+}
+
+#barra li{
+    /* colocar elementos en :horizontal */
+    display: inline;
+    margin: 0 20px;
+}

@@ -1,0 +1,17 @@
+<!-- HEredamos de la plantilla base  -->
+{% extends "ProyectoWebApp/base.html" %}
+
+<!-- Cargue todo el contenido de la carpeta static, archivos css e img  -->
+{% load static %}
+{% block content %}
+
+    {% for servicio in servicios %}
+        <div style="color: white;">
+            <h2>{{servicio.titulo}}</h2>
+            <p>{{servicio.contenido}}</p>
+            <p><img src="{{servicio.imagen.url}}" alt=""></p>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}

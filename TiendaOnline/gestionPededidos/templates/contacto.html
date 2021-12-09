@@ -1,0 +1,22 @@
+<!-- https://docs.djangoproject.com/en/3.2/ref/request-response/ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contacto</title>
+</head>
+<body>
+    <h1>Contactenos</h1>
+    <!-- MEtodo post porque nos va a permitir enviar la informacion posteriormente a un correo electronico  -->
+    <!-- El envio de formulario solicita un token que impide ataque a la web por secuestro de sesion. -->
+    <form action="/contacto/" method="POST">{% csrf_token %}
+        <p>Asunto: <input type="text" name="asunto"></p>
+        <p>Email: <input type="email" name="email" id=""></p>
+        <p>Mensaje: <textarea name="mensaje" id="" cols="30" rows="10"></textarea></p>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Resetear">
+    </form>
+</body>
+</html>

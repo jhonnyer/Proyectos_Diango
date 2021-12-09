@@ -1,0 +1,11 @@
+<!-- la estructura base de la plantilla hereda de la plantilla padre base.html -->
+{% extends "base.html" %}
+
+{% block title %} Curso Django {% endblock %}
+
+{% block content %}
+
+<p>Estamos al día {{dameFecha}}</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vo4VF3neyrs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/watch?v=d1-UX6aR_TM&list=PLU8oAlHdN5BmfvwxFO7HdPciOCmmYneAB" frameborder="0" allow="accelerometer; autoplay"></iframe> -->
+{% endblock %}

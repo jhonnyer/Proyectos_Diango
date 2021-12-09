@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include "nav/nav.html" %}
+    <h1>Mi lista de tareas</h1>
+    <ol>
+        {% for tarea in listado %}
+            {% if tarea != 'Aprender Django' %}
+                <li><strong>{{tarea}}</strong> tiene {{tarea|wordcount}} palabras</li>
+            {% else %}
+                <!-- <li style="color: red; font-size: 25px;">{{tarea}}</li> -->
+
+                <!-- Convertir texto en mayuscula  -->
+                <!-- <li style="color: red; font-size: 25px;">{{tarea | upper}}</li> -->
+
+                <!-- Convertir texto en minuscula  -->
+                <!-- <li style="color: red; font-size: 25px;">{{tarea | lower}}</li> -->
+
+                <!-- Conteo de palabras de una frase  -->
+                <!-- <li style="color: red; font-size: 25px;"><strong>{{tarea}}</strong> tiene {{tarea | wordcount}} palabras</li> -->
+
+                <!-- Tomar la primera letra de la palabra  -->
+                <!-- <li style="color: red; font-size: 25px;"><strong>{{tarea}}</strong>, la primera letra es: {{tarea | first}}</li> -->
+
+                <!-- Colocar doble filtro  -->
+                <li style="color: red; font-size: 25px;"><strong>{{tarea}}</strong>, {{tarea | first | lower}}</li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+    <p>La suma de {{a}} + {{b}} es igual a {{c}}</p>
+</body>
+</html>
+
+
+                
+                
+                
+                
+                

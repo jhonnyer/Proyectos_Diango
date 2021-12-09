@@ -1,0 +1,20 @@
+{% extends 'base1.html' %}
+{% load static %}
+
+{% block title %} Tecnologias  {% endblock %}
+
+{% block content %}
+    <div>
+        <h3>Tecnologias de inteligencia artificial</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UAfqE7ctcgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <!-- Slider -->
+	<div id="slider">
+		<div class="galeria">
+		   <div><img src="{% static 'img/hojas.jpg' %}" title="Hojas"></div>
+		   <div><img src="{% static 'img/rojo.jpg' %}" title="The long and winding road"></div>
+		   <div><img src="{% static 'img/cielo.jpg' %}" title="Happy trees"></div>
+		</div>
+	</div>
+{% endblock %}
